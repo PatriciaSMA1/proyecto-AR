@@ -1,40 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>AR.js Stemkoski Model Test</title>
-	<!-- Estas son las librerías exactas que usa Stemkoski en sus ejemplos -->
-	<script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
-	<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+    <title>AR.js Stemkoski Model Test</title>
+
+    <!-- Librerías A-Frame + AR.js -->
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
 </head>
 
-<body style="margin : 0px; overflow: hidden;">
+<body style="margin: 0; overflow: hidden;">
 
-	<!-- Estructura de escena típica de Stemkoski -->
-	<a-scene embedded vr-mode-ui="enabled: false;" arjs="debugUIEnabled: false;">
+    <a-scene embedded vr-mode-ui="enabled: false;" arjs="debugUIEnabled: false;">
 
-		<a-assets>
-			<!-- Aquí cargamos tu modelo como lo hace él -->
-			<a-asset-item id="casa" src="modelo.glb"></a-asset-item>
-		</a-assets>
-		
-		<!-- Él suele usar el marcador 'kanji' o 'hiro'. Vamos a usar Hiro que es el estándar -->
-		<a-marker preset="hiro">
-		
-			<!-- AQUÍ ESTÁ EL TRUCO PARA QUE NO SE VEA GIGANTE: -->
-			<!-- Cambia el scale. Si 0.01 es muy pequeño, prueba 0.02 o 0.05 -->
-			<!-- He añadido position="0 0 0" para que la base de la casa esté en el suelo -->
-			<a-entity 
-				gltf-model="#casa" 
-				scale="0.01 0.01 0.01" 
-				position="0 0 0" 
-				rotation="0 0 0">
-			</a-entity>
-			
-		</a-marker>
+        <a-assets>
+            <a-asset-item id="casa" src="models/modelo.glb"></a-asset-item>
+        </a-assets>
 
-		<!-- Cámara de Stemkoski -->
-		<a-entity camera></a-entity>
-		
-	</a-scene>
+        <a-marker preset="hiro">
+            <a-entity 
+                gltf-model="#casa"
+                scale="0.05 0.05 0.05"
+                position="0 0 0"
+                rotation="0 0 0">
+            </a-entity>
+        </a-marker>
+
+        <a-entity camera></a-entity>
+
+    </a-scene>
+
 </body>
 </html>
