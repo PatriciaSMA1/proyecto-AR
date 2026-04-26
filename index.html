@@ -13,15 +13,15 @@
             <a-asset-item id="catedral" src="catedral.glb"></a-asset-item>
         </a-assets>
 
-        <a-marker preset="hiro">
-            <!-- SCALE: 0.0003 (un poco más pequeño que antes) -->
-            <!-- ROTATION: -90 (para que esté de pie) y 180 (para girar la fachada hacia ti) -->
-            <!-- POSITION: 0 0 0.5 (para que se centre mejor en el marcador) -->
+       <a-marker preset="hiro">
+            <!-- SCALE: 0.00015 (Más pequeña para que sea una maqueta fina) -->
+            <!-- ROTATION: 0 -90 0 (He quitado el -90 inicial para que no se tumbe) -->
+            <!-- POSITION: 0 0 0 -->
             <a-entity 
                 gltf-model="#catedral" 
-                scale="0.0003 0.0003 0.0003" 
-                position="0 0 0.5" 
-                rotation="-90 180 0">
+                scale="0.00015 0.00015 0.00015" 
+                position="0 0 0" 
+                rotation="0 -90 0">
             </a-entity>
         </a-marker>
 
