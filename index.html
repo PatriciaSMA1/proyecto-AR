@@ -1,44 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Proyecto AR - Modelo 3D</title>
-
-    <!-- A-Frame -->
+    <title>Proyecto AR - Astronauta</title>
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
-
-    <!-- AR.js (CDN estable) -->
     <script src="https://cdn.jsdelivr.net/gh/AR-js-org/AR.js/aframe/build/aframe-ar.js"></script>
 </head>
 
 <body style="margin: 0px; overflow: hidden;">
-
     <a-scene embedded arjs="sourceType: webcam; debugUIEnabled: false;">
 
-        <!-- Carga del modelo -->
         <a-assets>
-            <a-asset-item id="casa" src="Astronaut.glb"></a-asset-item>
+            <!-- REVISA: El nombre debe ser idéntico al de tu lista de GitHub -->
+            <a-asset-item id="modelo" src="Astronaut.glb"></a-asset-item>
         </a-assets>
 
-        <!-- Marcador Hiro -->
         <a-marker preset="hiro">
-
-            <!-- MODELO 3D -->
+            <!-- Ponemos escala 1 1 1 porque ya es pequeño desde Blender -->
             <a-entity 
-                gltf-model="#casa"
+                gltf-model="#modelo"
                 position="0 0 0"
                 rotation="0 0 0"
-                scale="0.05 0.05 0.05">
+                scale="1 1 1">
             </a-entity>
-
-            <!-- 🔴 DEBUG: cubo rojo (puedes borrarlo luego) -->
-            <a-box position="0 0.5 0" color="red"></a-box>
-
         </a-marker>
 
-        <!-- Cámara -->
         <a-entity camera></a-entity>
-
     </a-scene>
-
 </body>
 </html>
