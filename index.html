@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="utf-8">
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
 </head>
@@ -8,17 +9,16 @@
     <a-scene embedded arjs="sourceType: webcam; debugUIEnabled: false;">
         
         <a-assets>
-            <!-- He añadido ?v=2 para que el móvil no use la versión vieja -->
-            <a-asset-item id="modelo" src="enano.glb?v=2"></a-asset-item>
+            <!-- REVISA: El nombre debe ser idéntico: enano2.glb -->
+            <a-asset-item id="casa" src="enano2.glb"></a-asset-item>
         </a-assets>
 
         <a-marker preset="hiro">
-            <!-- PRUEBA DE TAMAÑO: Escala 10 para ver si aparece -->
-            <!-- Si sale muy grande, luego lo bajamos a 1 -->
+            <!-- Empezamos con escala 1. Si sale muy pequeña, pon 5 5 5. Si sale gigante, 0.1 0.1 0.1 -->
             <a-entity 
-                gltf-model="#modelo" 
-                scale="10 10 10" 
-                position="0 0 0"
+                gltf-model="#casa" 
+                scale="1 1 1" 
+                position="0 0 0" 
                 rotation="0 0 0">
             </a-entity>
         </a-marker>
