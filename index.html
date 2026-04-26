@@ -14,13 +14,15 @@
         </a-assets>
 
         <a-marker preset="hiro">
-            <!-- Escala ajustada a 0.0006 (Punto medio entre pequeña y grande) -->
-            <a-entity 
-                gltf-model="#catedral" 
-                scale="0.0006 0.0006 0.0006" 
-                position="0 0 0" 
-                rotation="-90 0 0">
-            </a-entity>
+            <!-- SCALE: 0.0004 para que sea un poco más pequeña -->
+            <!-- ROTATION: He añadido 90 en el segundo valor para girar la fachada hacia ti -->
+            <!-- POSITION: He puesto 0.5 en el último valor para que no te "atropelle" y se aleje un poco de la palabra Hiro -->
+                <a-entity 
+                    gltf-model="#catedral" 
+                    scale="0.0004 0.0004 0.0004" 
+                    position="0 0 0.5" 
+                    rotation="-90 90 0">
+                </a-entity>
         </a-marker>
 
         <!-- Luces para que la catedral no se vea oscura -->
